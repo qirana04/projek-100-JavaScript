@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Music Player</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .music-player {
+            width: 350px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        
+        .cover {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 25px;
+            overflow: hidden;
+            border: 5px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            animation: rotate 20s linear infinite;
+            animation-play-state: paused;
+        }
+        
+        .cover.playing {
+            animation-play-state: running;
+        }
+        
+        .cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .song-info {
+            margin-bottom: 20px;
+        }
+        
+        .song-info h2 {
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+        
+        .song-info p {
+            color: #aaa;
+            font-size: 16px;
+        }
+        
+        .progress-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            height: 6px;
+            margin-bottom: 25px;
+            cursor: pointer;
+        }
+        
+        .progress {
+            background: #4a76a8;
+            height: 100%;
+            border-radius: 10px;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+        
+        .time-info {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+            font-size: 12px;
+            color: #aaa;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .controls button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            margin: 0 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .controls button:hover {
+            color: #4a76a8;
+            transform: scale(1.1);
+        }
+        
+        .controls .play-btn {
+            background: #4a76a8;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+        
+        .controls .play-btn:hover {
+            background: #3a5f8a;
+            transform: scale(1.05);
+        }
+        
+        .volume-container {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+        }
+        
+        .volume-container i {
+            margin-right: 10px;
+            color: #aaa;
+        }
+        
+        .volume-slider {
+            width: 100%;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 15px;
+            height: 15px;
+            background: #4a76a8;
+            border-radius: 50%;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .playlist {
+            margin-top: 25px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        
+        .playlist-item {
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .playlist-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .playlist-item.active {
+            background: rgba(74, 118, 168, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="music-player">
+        <div class="cover">
+            <img src="https://i.imgur.com/9O1WqlW.jpg" alt="Album Cover">
+        </div>
+        
+        <div class="song-info">
+            <h2 id="song-title">Song Title</h2>
+            <p id="artist">Artist Name</p>
+        </div>
+        
+        <div class="progress-container" id="progress-container">
+            <div class="progress" id="progress"></div>
+            <div class="time-info">
+                <span id="current-time">0:00</span>
+                <span id="duration">0:00</span>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button class="prev-btn"><i class="fas fa-step-backward"></i></button>
+            <button class="play-btn"><i class="fas fa-play"></i></button>
+            <button class="next-btn"><i class="fas fa-step-forward"></i></button>
+        </div>
+        
+        <div class="volume-container">
+            <i class="fas fa-volume-up"></i>
+            <input type="range" class="volume-slider" id="volume" min="0" max="1" step="0.01" value="0.7">
+        </div>
+        
+        <div class="playlist" id="playlist">
+            <!-- Playlist items will be added dynamically -->
+        </div>
+    </div>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    
+    <script src="music.js"></script>
+</body>
+</html>

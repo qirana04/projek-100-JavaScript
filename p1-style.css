@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Karla:wght@800&display=swap');
+
+body {
+    background-color: black;
+    font-family: 'Inter' , sans-serif;
+    
+    
+}
+
+.container {
+    background-color: #1f2937;
+    padding: 40px;
+    max-width: 900px;
+    margin: 40px auto;
+    
+}
+
+
+h1 {
+    color:  white;
+    font-size: xx-large;
+    font-weight: bolder;
+
+    
+}
+
+.bottom-half {
+    color:#55f991 ;
+    font-size: xx-large;
+    font-weight: bolder;
+
+    
+    
+}
+
+p {
+    color:  white;
+    margin-top: 5px;
+    margin-bottom: 15px;
+   
+}
+
+#length-el {
+    margin-right: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    
+
+}
+
+#button {
+    
+    padding: 12px 16px;
+    color: white;
+    background-color: #55f991;
+    font-weight: bolder;
+    font-size: large;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+img {
+    margin-left: 2px;
+}
+
+hr {
+    background:#273549 ;
+    border: none;
+    margin: 8px 0px;
+    padding: 1px;
+}
+
+
+.password {
+    background: #273549;
+    width: 300px;
+    padding: 30px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    color: #55f991;
+    text-align: center;
+}
+
+.left-column {
+    display: flex;
+   
+
+    
+   
+
+}
+
+.right-column {
+    display: flex;
+    
+   
+}
+
+
+    

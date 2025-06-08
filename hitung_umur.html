@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menghitung Umur</title>
+</head>
+<body>
+  <h1>Menghitung Umur</h1>  
+  <label>Masukan Tanggal Lahir: </label>
+  <input type="number" id="tanggal" min="1" max="31" placeholder="Tanggal"><br>
+  
+  <label>Masukan Bulan Lahir: </label>
+  <input type="number" id="bulan" min="1" max="12" placeholder="Bulan (1-12)"><br>
+  
+  <label>Masukan Tahun Lahir: </label>
+  <input type="number" id="tahun" min="1900" max="2100" placeholder="Tahun"><br><br>
+  
+  <button onclick="hitungUmur()">Hitung</button>
+  
+  <pre id="result"></pre>
+  <script src="hitung_umur.js"></script>
+</body>
+</html>

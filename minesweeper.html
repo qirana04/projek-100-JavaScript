@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper Sederhana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .game-info {
+            display: flex;
+            justify-content: space-between;
+            width: 300px;
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .game-board {
+            display: grid;
+            grid-template-columns: repeat(10, 30px);
+            grid-template-rows: repeat(10, 30px);
+            gap: 2px;
+            background-color: #999;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .cell {
+            width: 30px;
+            height: 30px;
+            background-color: #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+            border-radius: 3px;
+        }
+        .cell:hover {
+            background-color: #ddd;
+        }
+        .cell.revealed {
+            background-color: #eee;
+            cursor: default;
+        }
+        .cell.mine {
+            background-color: #f44336;
+            color: white;
+        }
+        .cell.flagged {
+            background-color: #ffeb3b;
+        }
+        .controls {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .color-1 { color: blue; }
+        .color-2 { color: green; }
+        .color-3 { color: red; }
+        .color-4 { color: darkblue; }
+        .color-5 { color: brown; }
+        .color-6 { color: teal; }
+        .color-7 { color: black; }
+        .color-8 { color: gray; }
+    </style>
+</head>
+<body>
+    <h1>Minesweeper Sederhana</h1>
+    <div class="game-info">
+        <div id="mines-count">💣: 15</div>
+        <div id="flags-count">🚩: 0</div>
+    </div>
+    <div class="game-board" id="game-board"></div>
+    <div class="controls">
+        <button id="reset-btn">Ulangi Permainan</button>
+    </div>
+
+    <script src="minesweeper.js"></script>
+</body>
+</html>
