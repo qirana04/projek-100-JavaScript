@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Animation</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #222;
+            color: #0f0;
+        }
+        
+        .typing-container {
+            width: 80%;
+            max-width: 800px;
+        }
+        
+        #typing-text {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            border-right: 0.15em solid #0f0; /* Cursor */
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        
+        .controls {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        button {
+            padding: 0.5rem 1rem;
+            font-family: 'Courier New', monospace;
+            background-color: #333;
+            color: #0f0;
+            border: 1px solid #0f0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        button:hover {
+            background-color: #0f0;
+            color: #222;
+        }
+        
+        .speed-control {
+            margin-top: 1rem;
+            color: #0f0;
+        }
+        
+        input[type="range"] {
+            width: 200px;
+            margin: 0 1rem;
+        }
+        
+        .speed-value {
+            display: inline-block;
+            width: 40px;
+            text-align: center;
+        }
+        
+        @media (max-width: 600px) {
+            #typing-text {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="typing-container">
+        <div id="typing-text"></div>
+        
+        <div class="controls">
+            <button id="start-btn">Start</button>
+            <button id="pause-btn" disabled>Pause</button>
+            <button id="reset-btn">Reset</button>
+        </div>
+        
+        <div class="speed-control">
+            <label for="speed">Kecepatan:</label>
+            <input type="range" id="speed" min="1" max="20" value="10">
+            <span class="speed-value" id="speed-value">10</span>
+        </div>
+    </div>
+
+    <script src="typing-animation.js"></script>
+</body>
+</html>

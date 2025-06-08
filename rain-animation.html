@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rain Animation</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #1a1a2e, #16213e);
+        }
+        
+        canvas {
+            display: block;
+        }
+        
+        .controls {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        
+        .control-group {
+            margin-bottom: 10px;
+        }
+        
+        label {
+            display: inline-block;
+            width: 120px;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        input[type="range"] {
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="rainCanvas"></canvas>
+    
+    <div class="controls">
+        <h2>Rain Controls</h2>
+        
+        <div class="control-group">
+            <label for="rainIntensity">Intensity:</label>
+            <input type="range" id="rainIntensity" min="100" max="2000" value="800">
+        </div>
+        
+        <div class="control-group">
+            <label for="rainSpeed">Speed:</label>
+            <input type="range" id="rainSpeed" min="1" max="20" value="10">
+        </div>
+        
+        <div class="control-group">
+            <label for="rainAngle">Angle:</label>
+            <input type="range" id="rainAngle" min="-30" max="30" value="15">
+        </div>
+        
+        <div class="control-group">
+            <label for="rainSize">Drop Size:</label>
+            <input type="range" id="rainSize" min="1" max="5" value="2">
+        </div>
+        
+        <button id="toggleRain">Pause Rain</button>
+        <button id="lightningBtn">Add Lightning</button>
+    </div>
+
+    <script src="rain-animation.js"></script>
+</body>
+</html>

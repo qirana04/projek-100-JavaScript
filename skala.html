@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kalkulator Skala</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Kalkulator Skala Peta</h2>
+
+    <label for="skala">Skala (misal 100000):</label><br>
+    <input type="number" id="skala" placeholder="Contoh: 100000">
+    <br><br>
+    <label for="jarakPeta">Jarak pada peta (cm):</label><br>
+    <input type="number" id="jarakPeta" placeholder="Contoh: 5">
+    <br><br>
+    <label for="jarakNyata">Jarak sebenarnya (km):</label><br>
+    <input type="number" id="jarakNyata" placeholder="Contoh: 10">
+    <br><br>
+    <div class="buttons">
+      <button onclick="hitungJarakNyata()">Hitung Jarak Sebenarnya</button><br><br>
+      <button onclick="hitungJarakPeta()">Hitung Jarak di Peta</button>
+    </div>
+
+    <p id="hasil">Hasil akan ditampilkan di sini.</p>
+  </div>
+
+  <script src="skala.js"></script>
+</body>
+</html>

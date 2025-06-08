@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div class="bg-white rounded-x1 shadow-lg w-full max-w-md overflow-hidden">
+      <div class="bg-indigo-600 p-6 text-white">
+        <h1 class="text-2xl font-bold">To Do List</h1>
+        <div class="flex mt-4">
+            <input id="task-input" placeholder="Tambah tugas..." class="flex-1 py-2 px-4
+            rounded-1 bg-indigo-500 placeholder-indigo-200 text-white focus:outline-none">
+            <button id="add-btn" class="bg-indigo-800 px-4 rounded-r">Tambah</button>
+        </div>
+      </div>
+ 
+      <div class="p-4">
+          <div id="task-list" class="divide-y">
+              <div id="empty" class="py-8 text-center text-gray-400">tidak ada tugas</div>
+          </div>
+      </div>
+  </div>
+  <script src="todolist.js"></script>
+  
+</body>
+</html>

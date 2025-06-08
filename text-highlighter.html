@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Highlighter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        #content {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            min-height: 200px;
+        }
+        
+        .highlight {
+            padding: 0 2px;
+            border-radius: 3px;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        button, select {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+            cursor: pointer;
+        }
+        
+        button:hover, select:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .color-option {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .color-option:hover {
+            transform: scale(1.1);
+        }
+        
+        .color-option.selected {
+            border-color: #333;
+        }
+        
+        .color-palette {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        
+        .highlight-remove {
+            background-color: #ffebee;
+            color: #c62828;
+            margin-left: 5px;
+            padding: 0 5px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.8em;
+            display: none;
+        }
+        
+        .highlight:hover .highlight-remove {
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Text Highlighter</h1>
+    
+    <div class="controls">
+        <div class="color-palette">
+            <span>Color:</span>
+            <div class="color-option selected" style="background-color: #fff59d;" data-color="#fff59d"></div>
+            <div class="color-option" style="background-color: #a5d6a7;" data-color="#a5d6a7"></div>
+            <div class="color-option" style="background-color: #81d4fa;" data-color="#81d4fa"></div>
+            <div class="color-option" style="background-color: #ce93d8;" data-color="#ce93d8"></div>
+            <div class="color-option" style="background-color: #ffab91;" data-color="#ffab91"></div>
+        </div>
+        
+        <button id="clearAll">Clear All Highlights</button>
+        <button id="toggleHighlights">Hide Highlights</button>
+    </div>
+    
+    <div id="content" contenteditable="true">
+        <p>Select any text in this area and it will be highlighted with the selected color.</p>
+        <p>You can highlight multiple sections of text. Try selecting some text in this paragraph or the one above.</p>
+        <p>This text highlighter allows you to:</p>
+        <ul>
+            <li>Highlight text with different colors</li>
+            <li>Remove individual highlights</li>
+            <li>Toggle visibility of all highlights</li>
+            <li>Clear all highlights at once</li>
+        </ul>
+    </div>
+    
+    <script src="text-highlighter.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soundboard - Kumpulan Efek Suara</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        
+        .sound-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .category-btn {
+            padding: 8px 15px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .category-btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .category-btn.active {
+            background-color: #2c3e50;
+        }
+        
+        .sound-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .sound-btn {
+            background-color: #ecf0f1;
+            border: none;
+            border-radius: 8px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .sound-btn:hover {
+            background-color: #d6eaf8;
+            transform: translateY(-2px);
+        }
+        
+        .sound-btn:active {
+            transform: translateY(0);
+        }
+        
+        .sound-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #3498db;
+        }
+        
+        .sound-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .sound-desc {
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+        
+        .volume-control {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .volume-slider {
+            width: 200px;
+        }
+        
+        .search-box {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-music"></i> Soundboard Efek Suara</h1>
+        
+        <input type="text" class="search-box" placeholder="Cari efek suara...">
+        
+        <div class="sound-categories">
+            <button class="category-btn active" data-category="all">Semua</button>
+            <button class="category-btn" data-category="nature">Alam</button>
+            <button class="category-btn" data-category="animals">Hewan</button>
+            <button class="category-btn" data-category="human">Manusia</button>
+            <button class="category-btn" data-category="tech">Teknologi</button>
+            <button class="category-btn" data-category="fun">Fun</button>
+        </div>
+        
+        <div class="sound-grid" id="soundGrid">
+            <!-- Sound buttons will be added here by JavaScript -->
+        </div>
+        
+        <div class="volume-control">
+            <i class="fas fa-volume-down"></i>
+            <input type="range" min="0" max="1" step="0.01" value="0.5" class="volume-slider" id="volumeSlider">
+            <i class="fas fa-volume-up"></i>
+        </div>
+    </div>
+    
+    <footer>
+        Kumpulan Efek Suara &copy; 2023 | Tekan tombol untuk memainkan suara
+    </footer>
+
+    <script src="soundboard.js"></script>
+</body>
+</html>
