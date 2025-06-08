@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Diskon</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        #hasil {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Kalkulator Diskon</h2>
+    
+    <div class="input-group">
+        <label for="harga">Harga Asli (Rp):</label>
+        <input type="number" id="harga" placeholder="Masukkan harga asli" min="0" step="100">
+        <p id="error-harga" class="error"></p>
+    </div>
+    
+    <div class="input-group">
+        <label for="diskon">Diskon (%):</label>
+        <input type="number" id="diskon" placeholder="Masukkan persentase diskon" min="0" max="100" step="1">
+        <p id="error-diskon" class="error"></p>
+    </div>
+    
+    <button onclick="hitungDiskon()">Hitung Diskon</button>
+    
+    <div id="hasil"></div>
+    
+    <script src="kalkulator-diskon.js"></script>
+</body>
+</html>
