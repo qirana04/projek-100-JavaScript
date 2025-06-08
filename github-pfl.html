@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Profile Finder</title>
+    <link rel="stylesheet" href="github-pfl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fab fa-github"></i> GitHub Profile Finder</h1>
+        <div class="search-box">
+            <input type="text" id="usernameInput" placeholder="Masukkan username GitHub...">
+            <button id="searchButton"><i class="fas fa-search"></i> Cari</button>
+        </div>
+        
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>Mencari profil...</p>
+        </div>
+        
+        <div id="error" class="hidden">
+            <p><i class="fas fa-exclamation-triangle"></i> Profil tidak ditemukan!</p>
+        </div>
+        
+        <div id="profile" class="hidden">
+            <div class="profile-header">
+                <img id="avatar" src="" alt="Profile Picture">
+                <div>
+                    <h2 id="name"></h2>
+                    <p id="username"></p>
+                </div>
+            </div>
+            
+            <div class="profile-stats">
+                <div class="stat">
+                    <span id="repos"></span>
+                    <span>Repositori</span>
+                </div>
+                <div class="stat">
+                    <span id="followers"></span>
+                    <span>Pengikut</span>
+                </div>
+                <div class="stat">
+                    <span id="following"></span>
+                    <span>Mengikuti</span>
+                </div>
+            </div>
+            
+            <div class="profile-info">
+                <p id="bio"></p>
+                <div class="info-item" id="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span></span>
+                </div>
+                <div class="info-item" id="blog">
+                    <i class="fas fa-link"></i>
+                    <a href="" target="_blank"></a>
+                </div>
+                <div class="info-item" id="twitter">
+                    <i class="fab fa-twitter"></i>
+                    <a href="" target="_blank"></a>
+                </div>
+            </div>
+            
+            <a id="profileLink" href="" target="_blank" class="view-profile">
+                <i class="fas fa-external-link-alt"></i> Lihat Profil Lengkap
+            </a>
+        </div>
+    </div>
+    
+    <script src="github-pfl.js"></script>
+</body>
+</html>

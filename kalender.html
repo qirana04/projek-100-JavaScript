@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalender Sederhana</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        .calendar {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #3498db;
+            color: white;
+        }
+        .calendar-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        .calendar-nav {
+            display: flex;
+            gap: 15px;
+        }
+        .calendar-nav button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+        .calendar-weekdays {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            background-color: #f0f0f0;
+            padding: 10px 0;
+            text-align: center;
+            font-weight: bold;
+            color: #555;
+        }
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+            padding: 10px;
+        }
+        .calendar-day {
+            aspect-ratio: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .calendar-day:hover {
+            background-color: #e0e0e0;
+        }
+        .calendar-day.today {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        .calendar-day.other-month {
+            color: #aaa;
+        }
+        .calendar-day.selected {
+            background-color: #2980b9;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="calendar">
+        <div class="calendar-header">
+            <button class="calendar-nav" id="prevMonth">&lt;</button>
+            <div class="calendar-title" id="monthYear"></div>
+            <button class="calendar-nav" id="nextMonth">&gt;</button>
+        </div>
+        <div class="calendar-weekdays">
+            <div>M</div>
+            <div>S</div>
+            <div>S</div>
+            <div>R</div>
+            <div>K</div>
+            <div>J</div>
+            <div>S</div>
+        </div>
+        <div class="calendar-days" id="calendarDays"></div>
+    </div>
+
+    <script src="kalender.js"></script>
+</body>
+</html>
