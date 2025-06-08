@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Ular Sederhana</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        #game-board {
+            border: 2px solid #333;
+            background-color: #fff;
+        }
+        
+        #score {
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+        
+        #controls {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Game Ular Sederhana</h1>
+    <canvas id="game-board" width="400" height="400"></canvas>
+    <div id="score">Skor: 0</div>
+    <div id="controls">
+        <button id="start-btn">Mulai</button>
+        <button id="restart-btn">Ulangi</button>
+    </div>
+
+    <script src="game-ular.js"></script>
+</body>
+</html>
