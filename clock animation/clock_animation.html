@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Neon Clock</title>
+    <link rel="stylesheet" href="clock_animation.css">
+</head>
+<body>
+    <div class="clock">
+        <div class="hand hour"></div>
+        <div class="hand minute"></div>
+        <div class="hand second"></div>
+        <div class="number" style="--rotation: 0deg"><span>12</span></div>
+        <div class="number" style="--rotation: 30deg"><span>1</span></div>
+        <div class="number" style="--rotation: 60deg"><span>2</span></div>
+        <div class="number" style="--rotation: 90deg"><span>3</span></div>
+        <div class="number" style="--rotation: 120deg"><span>4</span></div>
+        <div class="number" style="--rotation: 150deg"><span>5</span></div>
+        <div class="number" style="--rotation: 180deg"><span>6</span></div>
+        <div class="number" style="--rotation: 210deg"><span>7</span></div>
+        <div class="number" style="--rotation: 240deg"><span>8</span></div>
+        <div class="number" style="--rotation: 270deg"><span>9</span></div>
+        <div class="number" style="--rotation: 300deg"><span>10</span></div>
+        <div class="number" style="--rotation: 330deg"><span>11</span></div>
+        
+        <!-- Tick marks -->
+        <script>
+            for(let i = 0; i < 360; i += 3) {
+                document.write(<div class="tick" style="--rotation: ${i}deg"></div>);
+            }
+        </script>
+    </div>
+
+    <script src="clock_animation.js"></script>
+</body>
+</html>

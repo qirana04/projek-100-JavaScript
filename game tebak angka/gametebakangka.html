@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Tebak Angka</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            margin: 0;
+        }
+        
+        .game-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        
+        .instructions {
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+        
+        input {
+            padding: 10px;
+            width: 60px;
+            font-size: 18px;
+            text-align: center;
+            border: 2px solid #bdc3c7;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #2980b9;
+        }
+        
+        .message {
+            margin: 20px 0;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        
+        .info {
+            background-color: #e2e3e5;
+            color: #383d41;
+        }
+        
+        .attempts {
+            margin-top: 20px;
+            font-style: italic;
+            color: #7f8c8d;
+        }
+        
+        .restart-btn {
+            background-color: #e74c3c;
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .restart-btn:hover {
+            background-color: #c0392b;
+        }
+    </style>
+    <div class="game-container">
+        <h1>Game Tebak Angka</h1>
+        <p class="instructions">Saya telah memilih angka antara 1 sampai 100. Coba tebak!</p>
+        
+        <div>
+            <input type="number" id="guessInput" min="1" max="100" placeholder="Angka">
+            <button id="guessBtn">Tebak</button>
+        </div>
+        
+        <div id="message" class="message"></div>
+        <div id="attempts" class="attempts">Jumlah tebakan: 0</div>
+        
+        <button id="restartBtn" class="restart-btn">Main Lagi</button>
+    </div>
+
+    <script src="gametebakangka.js"></script>
+</body>
+</html>

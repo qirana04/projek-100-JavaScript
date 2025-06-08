@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather App</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 20px; }
+        .weather-card { 
+            max-width: 300px; margin: 0 auto; padding: 20px; 
+            border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        #location { font-size: 24px; font-weight: bold; }
+        #temp { font-size: 48px; margin: 10px 0; }
+        #desc { color: #666; }
+    </style>
+</head>
+<body>
+    <h1>Weather App</h1>
+    <input type="text" id="city-input" placeholder="Masukkan nama kota">
+    <button id="search-btn">Cari</button>
+    
+    <div class="weather-card" id="weather-result" style="display: none;">
+        <div id="location"></div>
+        <div id="temp"></div>
+        <div id="desc"></div>
+    </div>
+
+    <script src="cuaca.js"></script>
+</body>
+</html>

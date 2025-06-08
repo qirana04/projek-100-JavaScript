@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konversi Derajat Ke Gradien</title>
+</head>
+<body>
+  <h1>Konversi Derajat Ke Gradien</h1>
+  <div>
+    <label>Masukkan Sudut dalam Derajat: </label>
+    <input type="number" id="derajat" step="0.1" placeholder="Contoh: 45">
+    <button onclick="konversi()">Konversi</button>
+  </div>
+    
+  <div id="hasil" style="margin-top: 20px; font-size: 18px; font-weight: bold;"></div>
+    
+  <div style="margin-top: 30px; border-top: 1px solid #ccc; padding-top: 20px;">
+    <h3>Informasi Tambahan:</h3>
+      <ul>
+        <li>Gradien (m) = tan(θ) di mana θ adalah sudut dalam derajat</li>
+        <li>Gradien 1 (45°) = kemiringan 100%</li>
+        <li>Gradien 0 (0°) = bidang datar</li>
+        <li>Gradien ∞ (90°) = bidang vertikal</li>
+        <li>Gradien negatif = kemiringan ke bawah</li>
+      </ul>
+  </div>
+  <script src="derajat-G.js"></script>
+</body>
+</html>

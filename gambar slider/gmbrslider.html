@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gambar Slider</title>
+    <style>
+        #slider {
+            width: 500px;
+            height: 300px;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        #slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            transition: opacity 1s;
+        }
+    </style>
+</head>
+<body>
+    <div id="slider">
+        <img src="https://via.placeholder.com/500x300?text=Gambar+1" class="active">
+        <img src="https://via.placeholder.com/500x300?text=Gambar+2">
+        <img src="https://via.placeholder.com/500x300?text=Gambar+3">
+    </div>
+    <button onclick="prev()">Sebelumnya</button>
+    <button onclick="next()">Selanjutnya</button>
+    
+    <script src="gmbrslider.js"></script>
+</body>
+</html>

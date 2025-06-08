@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validasi Form</title>
+</head>
+<body>
+    <h2>Form Registrasi</h2>
+    <form onsubmit="return validateForm()">
+        <input type="text" id="nama" placeholder="Nama" required><br>
+        <input type="email" id="email" placeholder="Email" required><br>
+        <input type="password" id="password" placeholder="Password" required><br>
+        <button type="submit">Daftar</button>
+    </form>
+    <p id="error"></p>
+    
+    <script src="form.js"></script>
+</body>
+</html>

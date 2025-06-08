@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Q&A </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <style>
+        /* Custom styles to make SweetAlert2 look more classic */
+        .swal2-popup {
+            font-family: 'Arial', sans-serif;
+            border-radius: 4px;
+            background-color: #f0f0f0;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        .swal2-title {
+            font-size: 1.5em;
+            color: #000;
+        }
+        .swal2-content {
+            font-size: 1em;
+            color: #000;
+        }
+
+        .swal2-title {
+            font-size: 20px;
+        }
+
+        .swal2-input, .swal2-select, .swal2-textarea {
+            border: 1px solid #000;
+            background-color: #fff;
+        }
+        .swal2-confirm, .swal2-cancel {
+            background-color: unset !important;
+            color: rgb(15, 14, 14);
+            border: 1px solid #000;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .swal2-confirm:hover, .swal2-cancel:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>A.I hidup secara emosional</h1>
+    <button onclick="startQnA()">Start Q&A</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="ai.js"></script>
+</body>
+</html>

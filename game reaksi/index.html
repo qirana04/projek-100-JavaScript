@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Reaksi</title>
+    <style>
+        #game-area {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            position: relative;
+            background-color: #f0f0f0;
+        }
+        #target {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        #stats {
+            text-align: center;
+            font-size: 20px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Game Reaksi</h1>
+    <div id="stats">
+        Waktu Reaksi: <span id="reaction-time">0</span> ms<br>
+        Rata-rata: <span id="average-time">0</span> ms<br>
+        Percobaan: <span id="attempts">0</span>
+    </div>
+    <div id="game-area">
+        <div id="target"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

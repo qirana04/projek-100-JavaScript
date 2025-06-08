@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .controls {
+            margin-bottom: 20px;
+        }
+        
+        button {
+            padding: 8px 16px;
+            margin: 0 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        #sudoku-board {
+            display: grid;
+            grid-template-columns: repeat(9, 50px);
+            grid-template-rows: repeat(9, 50px);
+            gap: 1px;
+            background-color: #333;
+            border: 2px solid #333;
+        }
+        
+        .cell {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .cell:nth-child(3n) {
+            margin-right: 2px;
+        }
+        
+        .cell:nth-child(9n) {
+            margin-right: 0;
+        }
+        
+        .cell:nth-child(n+19):nth-child(-n+27),
+        .cell:nth-child(n+46):nth-child(-n+54) {
+            margin-bottom: 2px;
+        }
+        
+        .cell.fixed {
+            background-color: #f0f0f0;
+        }
+        
+        .cell.selected {
+            background-color: #cce5ff;
+        }
+        
+        .cell.highlighted {
+            background-color: #e6f7ff;
+        }
+        
+        .cell.error {
+            color: red;
+        }
+        
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sudoku Game</h1>
+    
+    <div class="controls">
+        <button id="new-game">New Game</button>
+        <button id="check">Check Solution</button>
+        <button id="solve">Solve</button>
+        <button id="clear">Clear</button>
+        <button id="hint">Hint</button>
+    </div>
+    
+    <div id="sudoku-board"></div>
+    
+    <div class="message" id="message"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
